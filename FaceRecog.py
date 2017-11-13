@@ -10,8 +10,6 @@ import imutils
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 cap = cv2.VideoCapture(0)
-count = 0
-name = 'caity'
 subjects = [' ', 'Caitlyn', 'Mark']
 
 detector = dlib.get_frontal_face_detector()
@@ -152,7 +150,7 @@ while True:
 		faceOrig = imutils.resize(frame[y:y+h, x:x+w], width = 256)
 		faceAligned = fa.align(frame, gray, rect)
 		cv2.imshow("Checking", faceAligned)
-		test_img1 = faceAligned
+		test_img1 = frame
 		#perform a prediction
 		predicted_img1, guess = predict(test_img1)
 		print "Found: " + guess
