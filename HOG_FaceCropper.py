@@ -14,8 +14,7 @@ fa = FaceAligner(predictor, desiredFaceWidth=256)
 
 cap = cv2.VideoCapture(0)
 count = 0
-name = 'Caity'
-subjects = [" ", "Caitlyn", "Mark"]
+name = raw_input("Enter your name....")
 
 while True:
 	ret, img = cap.read()
